@@ -1,7 +1,8 @@
 # graph-editor
-Graph editor to check graph types
+Graph editor to check and validate graph like:
 
-Thanks to http://bl.ocks.org/rkirsling for this awesome script in d3.js
-Inspired to http://bl.ocks.org/rkirsling/5001347
+1. Planer
 
-See more to: https://github.com/mbostock/d3/wiki/Gallery
+Thanks to [rkirsling](http://bl.ocks.org/rkirsling) for this awesome script in d3.js.
+Inspired to [Directed Graph Editor](http://bl.ocks.org/rkirsling/5001347)
+See more to: [Gallery D3.js](https://github.com/mbostock/d3/wiki/Gallery)
