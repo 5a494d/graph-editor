@@ -1,0 +1,34 @@
+{
+  "name": "graph-editor",
+  "version": "1.0.0",
+  "description": "Graph editor to show and validate grahps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5a494d/graph-editor.git"
+  },
+  "keywords": [
+    "graph",
+    "show",
+    "editor",
+    "validate"
+  ],
+  "author": "Jorge Lipa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5a494d/graph-editor/issues"
+  },
+  "homepage": "https://github.com/5a494d/graph-editor#readme",
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-open": "^0.2.3",
+    "matchdep": "^0.3.0"
+  }
+}
