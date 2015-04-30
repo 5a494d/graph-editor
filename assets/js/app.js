@@ -3,7 +3,7 @@ var width  = 960,
     height = 500,
     colors = d3.scale.category10();
 
-var svg = d3.select('body')
+var svg = d3.select('#graph-container')
   .append('svg')
   .attr('width', width)
   .attr('height', height);
@@ -105,6 +105,9 @@ function restart() {
   // path (link) group
   path = path.data(links);
 
+  // log links files 
+  console.log(links)
+
   // update existing links
   path.classed('selected', function(d) { return d === selected_link; })
     .style('marker-start', function(d) { return d.left ? 'url(#start-arrow)' : ''; })
@@ -175,6 +178,7 @@ function restart() {
         .classed('hidden', false)
         .attr('d', 'M' + mousedown_node.x + ',' + mousedown_node.y + 'L' + mousedown_node.x + ',' + mousedown_node.y);
 
+        console.log('M' + mousedown_node.x + ',' + mousedown_node.y + 'L' + mousedown_node.x + ',' + mousedown_node.y)
       restart();
     })
     .on('mouseup', function(d) {

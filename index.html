@@ -4,12 +4,30 @@
     <meta charset="utf-8">
     <title>Directed Graph Editor</title>
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap-theme.min.css">
   </head>
   
   <body>
-  </body>
+    <div class="container">
+      <!-- Building graph-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="graph-container"></div>
+        </div>
+      </div>
 
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+      <!-- showing tree to that graph is plane-->
+      <div class="row">
+        <div class="col-lg-6">graph builded</div>
+        <div class="col-lg-6">Some information</div>
+      </div>
+    </div>
+  </body>
+  
+  <script src="assets/components/jquery/dist/jquery.min.js"></script>
+  <script src="assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="assets/components/d3/d3.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
 </html>
