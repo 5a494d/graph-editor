@@ -2,3 +2,7 @@
 	npm install
 2. Run bower command for dependencies
 	bower install
+3. Give up browser with
+        grunt serve
+4. Into browser
+   http://localhost:9000

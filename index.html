@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Directed Graph Editor</title>
+    <title>Editor de grafos</title>
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -19,8 +19,25 @@
 
       <!-- showing tree to that graph is plane-->
       <div class="row">
-        <div class="col-lg-6">graph builded</div>
-        <div class="col-lg-6">Some information</div>
+        <div class="col-lg-12">Verificar planaridad  <button id="check-planarity">Ahora</button> </div>
+      </div>
+      <div>
+        <p>
+          La presente aplicacion grafica un grafo de forma manual.
+        </p>
+
+        <ol>
+            <li>
+              Se crean vertices haciendo click, en porcion blanca ubidada en la parte superior   
+            </li>
+            <li>
+              Para enlazar los vertices, se escoge un vertice y y luego hacer click sin soltar el boton arrastrar hasta otro vertice con el que se desee enlazar.
+            </li>
+            <li>Una vez construido el grafo se procede a verificar la planaridad del grafo pulsando el boton "Ahora"</li>
+            <li>
+              Un Mensaje aparecera informando del resultado. Para construir un grafo nuevo vuelva a refrescar la pagina.
+            </li>
+        </ol>
       </div>
     </div>
   </body>
@@ -29,5 +46,4 @@
   <script src="assets/components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="assets/components/d3/d3.min.js"></script>
   <script src="assets/js/app.js"></script>
-  <script src="http://localhost:35729/livereload.js"></script>
 </html>

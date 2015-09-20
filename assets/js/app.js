@@ -1,6 +1,6 @@
 // set up SVG for D3
-var width  = 960,
-    height = 500,
+var width  = 800,
+    height = 600,
     colors = d3.scale.category10();
 
 var svg = d3.select('#graph-container')
@@ -12,16 +12,9 @@ var svg = d3.select('#graph-container')
 //  - nodes are known by 'id', not by index in array.
 //  - reflexive edges are indicated on the node (as a bold black circle).
 //  - links are always source < target; edge directions are set by 'left' and 'right'.
-var nodes = [
-    {id: 0, reflexive: false},
-    {id: 1, reflexive: true },
-    {id: 2, reflexive: false}
-  ],
-  lastNodeId = 2,
-  links = [
-    {source: nodes[0], target: nodes[1], left: false, right: true },
-    {source: nodes[1], target: nodes[2], left: false, right: true }
-  ];
+var nodes = [ ],
+  lastNodeId = 0,
+  links = [ ];
 
 // init D3 force layout
 var force = d3.layout.force()
@@ -34,7 +27,7 @@ var force = d3.layout.force()
 
 // define arrow markers for graph links
 svg.append('svg:defs').append('svg:marker')
-    .attr('id', 'end-arrow')
+    .attr('id', 'start-arrow')
     .attr('viewBox', '0 -5 10 10')
     .attr('refX', 6)
     .attr('markerWidth', 3)
@@ -111,7 +104,7 @@ function restart() {
   // update existing links
   path.classed('selected', function(d) { return d === selected_link; })
     .style('marker-start', function(d) { return d.left ? 'url(#start-arrow)' : ''; })
-    .style('marker-end', function(d) { return d.right ? 'url(#end-arrow)' : ''; });
+    .style('marker-start', function(d) { return d.right ? 'url(#start-arrow)' : ''; });
 
 
   // add new links
@@ -119,7 +112,7 @@ function restart() {
     .attr('class', 'link')
     .classed('selected', function(d) { return d === selected_link; })
     .style('marker-start', function(d) { return d.left ? 'url(#start-arrow)' : ''; })
-    .style('marker-end', function(d) { return d.right ? 'url(#end-arrow)' : ''; })
+    .style('marker-start', function(d) { return d.right ? 'url(#start-arrow)' : ''; })
     .on('mousedown', function(d) {
       if(d3.event.ctrlKey) return;
 
@@ -174,7 +167,7 @@ function restart() {
 
       // reposition drag line
       drag_line
-        .style('marker-end', 'url(#end-arrow)')
+        .style('marker-start', 'url(#start-arrow)')
         .classed('hidden', false)
         .attr('d', 'M' + mousedown_node.x + ',' + mousedown_node.y + 'L' + mousedown_node.x + ',' + mousedown_node.y);
 
@@ -187,7 +180,7 @@ function restart() {
       // needed by FF
       drag_line
         .classed('hidden', true)
-        .style('marker-end', '');
+        .style('marker-start', '');
 
       // check for drag-to-self
       mouseup_node = d;
@@ -275,7 +268,7 @@ function mouseup() {
     // hide drag line
     drag_line
       .classed('hidden', true)
-      .style('marker-end', '');
+      .style('marker-start', '');
   }
 
   // because :active only works in WebKit?
@@ -373,3 +366,9 @@ d3.select(window)
   .on('keydown', keydown)
   .on('keyup', keyup);
 restart();
+
+
+
+$('#check-planarity').click(function(){
+  alert('Ups.')
+})
